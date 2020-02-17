@@ -1,0 +1,78 @@
+#include <iostream>
+#include <complex.h>
+#include <math.h>
+using namespace std;
+int main()
+{
+	cout << "Assessment the areas of the inscribed triangles " << endl;
+	cout << "Enter the parameters: " << endl;
+
+	double  a = 0, b = 0, c = 0;
+	cout << "a = ";
+	cin >> a;
+	cout << "b = ";
+	cin >> b;
+	cout << "c = ";
+	cin >> c;
+
+	cout << "p = ";
+	cout << (a + b + c) / 2 << endl;
+
+	cout << "s = ";
+	double s = sqrt(((a + b + c) / 2) * (((a + b + c) / 2) - a) * (((a + b + c) / 2) - b) * (((a + b + c) / 2) - c));
+	cout << s << endl;
+
+	int input;
+
+	cout << "The inscribed triangle is formed by the bases of the parallel to the sides lines drawn through the point M" << endl;
+	cout << "1. If M is any" << endl;
+	cout << "2. If M is the point of intersection of the heighs" << endl;
+	cout << "3. If M is the point of intersection of the medians" << endl;
+	cout << "4. If M is the center of the inscribed circle" << endl;
+	cout << "5. If M is the center of the described circle" << endl;
+
+	cout << "Selection: ";
+
+	cin >> input;
+	switch (input) {
+	case 1:
+		cout << "Evaluating the area of the inscribed triangle" << endl;
+		cout << "Q <= ";
+		cout << s / 3;
+		break;
+
+	case 2:
+		cout << "Evaluating the area of the inscribed triangle" << endl;
+		cout << "Q > 0" << endl;
+		cout << "Q <= ";
+		cout << s/ 3;
+		break;
+
+	case 3:
+		cout << "Evaluating the area of the inscribed triangle" << endl;
+		cout << "Q = ";
+		cout << s/ 3;
+		break;
+
+	case 4:
+		cout << "Evaluating the area of the inscribed triangle" << endl;
+		cout << "Q > ";
+		cout << s/ 4 << endl;
+		cout << "Q <= ";
+		cout << s/ 3;
+		break;
+
+	case 5:
+		cout << "Evaluating the area of the inscribed triangle" << endl;
+		cout << "Q > ";
+		cout << s/ 4 << endl;
+		cout << "Q <= ";
+		cout << s/ 3;
+		break;
+
+	default:
+		cout << "Error, bad input, quitting\n";
+		break;
+	}
+	return 0;
+}
